@@ -57,11 +57,11 @@ header {
     color: blue;
     background: red;    
 }
-.underscore {
+.currentWord {
     border: 3px solid black;
     height: 100px;
     width: 80%;
-    font-size: 75px;
+    font-size: 20px;
     text-align: center;
     margin: 15px auto;
 }
@@ -74,6 +74,14 @@ header {
     margin: 15px auto;
 }
 .wrongGuess {
+    border: 3px solid black;
+    height: 100px;
+    width: 80%;
+    font-size: 20px;
+    text-align: center;
+    margin: 15px auto;
+}
+.letterUsed {
     border: 3px solid black;
     height: 100px;
     width: 80%;
