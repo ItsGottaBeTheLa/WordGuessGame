@@ -11,13 +11,13 @@ var word = [
 // Choose random Word
 var randomNum = Math.floor(Math.random() * word.length);
 var chosenWord = word[randomNum];
-var underScore = ["_"];
+
 // Underscores based on length of the Word
 
 // Get users guess
 
 // Check if Guess is right
 
-//If right push to right array
+//If right push to wins
 
-//If wrong push to wrong array
+//If wrong push to Number of Guesses Remaining
