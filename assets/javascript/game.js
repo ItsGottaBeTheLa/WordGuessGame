@@ -1,34 +1,70 @@
-// Array of Words to choose randomly
-var word = [
-    "Hazard", 
-    "Mbappe", 
-    "Ronaldo", 
-    "Neymar", 
-    "Messi", 
-    "Dybala",
-];
+// Grab reference to my DOM Elements
+var $newGameButton = document.getElementById("new-game-button");
+var $placeholders = document.getElementById("place-holders");
+var $guessedLetters = document.getElementById("guessed-letters");
+var $lettersLeft = document.getElementById("letters-left");
+var $wins = document.getElementById("wins-made");
+var $losses = document.getElementById("losses-made");
 
-// Choose random Word
-var randomWord = word[Math.floor(Math.random() * word.length)];
 
-// var wordSelected = document.getElementById("currentWord");
-// wordSelected.innerHTML = randomWord;
-var chosenWord = [];
+// Create Variables for game
+var wordBank = ["America", "Italy", "France", "Spain", "Netherlands", "England"];
+var wins = 0;
+var losses = 0;
+var guessesLeft = 0;
+var pickedWord = " ";
+var pickedWordPlaceHolderArr = [];
+var guessedLetterBank = [];
+var incorrectLetterBank = [];
+var gameRunning = false;
 
-// Underscores based on array
-// var currentWord = chosenWord;
-for (var i = 0; i < randomWord.length; i++) {
-    chosenWord.push("_");
+
+// Create new game function - to reset game
+function newGame() {
+    
+    //reset all game info
+    gameRunning = true;
+    guessesLeft = 7;
+    guessedLetterBank = [];
+    incorrectLetterBank = [];
+    pickedWordPlaceHolderArr = [];
+
+    // Pick a new word
+    pickedWord = wordBank(Math.floor(Math.random() * wordBank.length));
+    
+    // create place holders based on word length
+    for (var i = 0; i < pickedWord.length; i++) {
+        if(pickedWord[i] === " ") {
+            pickedWordPlaceHolderArr.push(" ");
+        } else {
+            pickedWordPlaceHolderArr.push("_");
+        }
+    }
+
+    // Write game info to DOM
+    $guessesLeft.textContent = guessesLeft;
+    $placeholders.textContent = pickedWordPlaceHolderArr.join("");
+    $guessedLetters.textContent = incorrectLetterBank;
+
+
 }
-
-var wordSelected = document.getElementById("currentWord");
-wordSelected.innerHTML = chosenWord;
+// letterGuess function, based on letter pressed if it is in the array
 
 
-// Get users guess
 
-// Check if Guess is right
+// check for incorrect letter
 
-//If right push to wins
 
-//If wrong push to Number of Guesses Remaining
+
+// check lose
+
+
+
+// check win
+
+
+// add event listener for new game button
+$newGameButton.addEventListener("click", newGame);
+
+
+// add onkeyup event to trigger letterGuess

@@ -11,6 +11,7 @@ body {
     border: none;
     cursor: pointer;
     display: block;
+    position: relative;
     background-color: blue;
     font-size: 22px;
     font-weight: bold;
@@ -19,4 +20,17 @@ body {
     padding: 25px;
     border-radius: 20px;
     box-shadow: 0 6px gold;
+}
+#newgamebutton:hover {
+    box-shadow: 0 2px gold;
+}
+#newgamebutton:active {
+    box-shadow: 0px;
+}
+#placeholder-area {
+    background-color: red;
+}
+#placeholders {
+    letter-spacing: 5px;
+    font-size: 40px;
 }
