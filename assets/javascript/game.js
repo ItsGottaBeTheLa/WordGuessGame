@@ -30,7 +30,7 @@ function newGame() {
     pickedWordPlaceHolderArr = [];
 
     // Pick a new word
-    pickedWord = wordBank(Math.floor(Math.random() * wordBank.length));
+    pickedWord = wordBank[Math.floor(Math.random() * wordBank.length)];
     
     // create place holders based on word length
     for (var i = 0; i < pickedWord.length; i++) {
