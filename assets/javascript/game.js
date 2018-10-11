@@ -1,18 +1,29 @@
-// Array of Words
+// Array of Words to choose randomly
 var word = [
     "Hazard", 
     "Mbappe", 
     "Ronaldo", 
     "Neymar", 
     "Messi", 
-    "Dybala"
+    "Dybala",
 ];
 
 // Choose random Word
-var randomNum = Math.floor(Math.random() * word.length);
-var chosenWord = word[randomNum];
+var randomWord = word[Math.floor(Math.random() * word.length)];
 
-// Underscores based on length of the Word
+// var wordSelected = document.getElementById("currentWord");
+// wordSelected.innerHTML = randomWord;
+var chosenWord = [];
+
+// Underscores based on array
+// var currentWord = chosenWord;
+for (var i = 0; i < randomWord.length; i++) {
+    chosenWord.push("_");
+}
+
+var wordSelected = document.getElementById("currentWord");
+wordSelected.innerHTML = chosenWord;
+
 
 // Get users guess
 
