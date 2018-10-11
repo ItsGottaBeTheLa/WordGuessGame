@@ -6,7 +6,7 @@ body {
     background-color: whitesmoke;
     color: black;
 }
-#newgamebutton {
+#new-game-button {
     outline: none;
     border: none;
     cursor: pointer;
@@ -21,10 +21,10 @@ body {
     border-radius: 20px;
     box-shadow: 0 6px gold;
 }
-#newgamebutton:hover {
+#new-game-button:hover {
     box-shadow: 0 2px gold;
 }
-#newgamebutton:active {
+#newGameButton:active {
     box-shadow: 0px;
 }
 #placeholder-area {

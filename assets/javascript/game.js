@@ -42,9 +42,6 @@ function newGame() {
     }
 
     // Write game info to DOM
-    $guessesLeft.textContent = guessesLeft;
-    $placeholders.textContent = pickedWordPlaceHolderArr.join("");
-    $guessedLetters.textContent = incorrectLetterBank;
 
 
 }
