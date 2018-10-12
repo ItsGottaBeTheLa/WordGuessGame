@@ -8,7 +8,7 @@ var losses = document.getElementById("losses-made");
 
 
 // Create Variables for game
-var wordBank = ["America", "Italy", "France", "Spain", "Netherlands", "England"];
+var wordBank = ["Chelsea", "Liverpool", "Paris St Germain", "Real Madrid", "Barcelona", "Ajax", "Juventus", "Napoli", "Arsenal", "Boca Juniors"];
 var wins = 0;
 var losses = 0;
 var lettersLeft = 7;
@@ -43,7 +43,7 @@ function newGame() {
     }
 
     // Write game info to DOM
-    guessesLeft.textContent = lettersLeft;
+    lettersLeft.textContent = lettersLeft;
     placeholders.textContent = pickedWordPlaceHolderArr.join(" ");
     guessedLetters.textContent = incorrectLetterBank;
 
