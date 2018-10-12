@@ -2,7 +2,7 @@
 var newGameButton = document.getElementById("new-game-button");
 var placeholders = document.getElementById("place-holders");
 var guessedLetters = document.getElementById("guessed-letters");
-var lettersLeft = document.getElementById("letters-left");
+var guessesLeft = document.getElementById("letters-left");
 var wins = document.getElementById("wins-made");
 var losses = document.getElementById("losses-made");
 
@@ -11,7 +11,7 @@ var losses = document.getElementById("losses-made");
 var wordBank = ["Chelsea", "Liverpool", "Paris St Germain", "Real Madrid", "Barcelona", "Ajax", "Juventus", "Napoli", "Arsenal", "Boca Juniors"];
 var wins = 0;
 var losses = 0;
-var lettersLeft = 7;
+var guessesLeft = 7;
 var pickedWord = " ";
 var pickedWordPlaceHolderArr = [];
 var guessedLetterBank = [];
@@ -24,7 +24,7 @@ var gameRunning = false;
 function newGame() {
     
     //reset all game info
-    lettersLeft = 7;
+    guessesLeft = 7;
     guessedLetterBank = [];
     incorrectLetterBank = [];
     pickedWordPlaceHolderArr = [];
@@ -43,7 +43,7 @@ function newGame() {
     }
 
     // Write game info to DOM
-    lettersLeft.textContent = lettersLeft;
+    guessesLeft.textContent = guessesLeft;
     placeholders.textContent = pickedWordPlaceHolderArr.join(" ");
     guessedLetters.textContent = incorrectLetterBank;
 
@@ -87,7 +87,7 @@ function checkIncorrect(letter) {
         guessedLetterBank.textContent = incorrectLetterBank.join(" ");
         guessesLeft.textContent = guessesLeft;
     }
-    
+    checkLoss();
 }
 
 
@@ -98,6 +98,7 @@ function checkLoss() {
         gameRunning = false;
         losses.textContent = losses;
     }
+    checkWin();
 }
 
 
