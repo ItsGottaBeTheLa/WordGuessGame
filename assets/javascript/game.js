@@ -53,6 +53,8 @@ function letterGuess(letter) {
     console.log(letter);
 
     if (gameRunning === true && guessedLetterBank.indexOf(letter) === -1) {
+        // Print to DOM
+        guessedLetters.textContent = guessedLetterBank.join(" ");
         // Run Game Logic
         guessedLetterBank.push(letter);
 
@@ -82,7 +84,7 @@ function letterGuess(letter) {
 function checkIncorrect(letter) {
     if (pickedWordPlaceHolderArr.indexOf(letter.toLowerCase()) === -1 && 
     pickedWordPlaceHolderArr.indexOf(letter.toUpperCase()) === -1) { 
-        guessesLeft --;
+        guessesLeft--;
         incorrectLetterBank.push(letter);
         guessedLetterBank.textContent = incorrectLetterBank.join(" ");
         guessesLeft.textContent = guessesLeft;
@@ -94,8 +96,8 @@ function checkIncorrect(letter) {
 // check lose
 function checkLoss() {
     if (guessesLeft === 0) {
-        losses++;
         gameRunning = false;
+        losses ++;
         losses.textContent = losses;
     }
     checkWin();
@@ -106,7 +108,7 @@ function checkLoss() {
 function checkWin () {
     if (pickedWord.toLowerCase() === pickedWordPlaceHolderArr.join(" ").toLowerCase())
     {
-        wins++;
+        wins ++;
         gameRunning = false;
         wins.textContent = wins;
     }
