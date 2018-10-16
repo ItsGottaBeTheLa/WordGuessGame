@@ -9,7 +9,7 @@ var losses = document.getElementById("losses-made");
 
 // Create Variables for game
 var wordBank = ["Chelsea", "Liverpool", "Paris St Germain", "Real Madrid", "Barcelona", "Ajax", "Juventus", "Napoli", "Arsenal", "Boca Juniors"];
-var wins = 0;
+var winsCount = 0;
 var lossesCount = 0;
 var guessesLeft$ = 7;
 var pickedWord = " ";
@@ -43,7 +43,7 @@ function newGame() {
     }
 
     // Write game info to DOM
-    guessesLeft$.textContent = guessesLeft$;
+    guessesLeft.textContent = guessesLeft$;
     placeholders.textContent = pickedWordPlaceHolderArr.join(" ");
     guessedLetters.textContent = incorrectLetterBank;
 
@@ -87,7 +87,7 @@ function checkIncorrect(letter) {
         guessesLeft$ --;
         incorrectLetterBank.push(letter);
         guessedLetterBank.textContent = incorrectLetterBank.join(" ");
-        guessesLeft$.textContent = guessesLeft$;
+        guessesLeft.textContent = guessesLeft$;
     }
     checkLoss();
 }
@@ -98,7 +98,7 @@ function checkLoss() {
     if (guessesLeft$ === 0) {
         gameRunning = false;
         lossesCount ++;
-        lossesCount.textContent = lossesCount;
+        losses.textContent = lossesCount;
     }
     checkWin();
 }
@@ -108,9 +108,9 @@ function checkLoss() {
 function checkWin () {
     if (pickedWord.toLowerCase() === pickedWordPlaceHolderArr.join(" ").toLowerCase())
     {
-        wins ++;
+        winsCount ++;
         gameRunning = false;
-        wins.textContent = wins;
+        wins.textContent = winsCount;
     }
 }
 
