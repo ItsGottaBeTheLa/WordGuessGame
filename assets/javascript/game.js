@@ -10,8 +10,8 @@ var losses = document.getElementById("losses-made");
 // Create Variables for game
 var wordBank = ["Chelsea", "Liverpool", "Paris St Germain", "Real Madrid", "Barcelona", "Ajax", "Juventus", "Napoli", "Arsenal", "Boca Juniors"];
 var wins = 0;
-var losses = 0;
-var guessesLeft = 7;
+var lossesCount = 0;
+var guessesLeft$ = 7;
 var pickedWord = " ";
 var pickedWordPlaceHolderArr = [];
 var guessedLetterBank = [];
@@ -24,7 +24,7 @@ var gameRunning = false;
 function newGame() {
     
     //reset all game info
-    guessesLeft = 7;
+    guessesLeft$ = 7;
     guessedLetterBank = [];
     incorrectLetterBank = [];
     pickedWordPlaceHolderArr = [];
@@ -43,7 +43,7 @@ function newGame() {
     }
 
     // Write game info to DOM
-    guessesLeft.textContent = guessesLeft;
+    guessesLeft$.textContent = guessesLeft$;
     placeholders.textContent = pickedWordPlaceHolderArr.join(" ");
     guessedLetters.textContent = incorrectLetterBank;
 
@@ -84,10 +84,10 @@ function letterGuess(letter) {
 function checkIncorrect(letter) {
     if (pickedWordPlaceHolderArr.indexOf(letter.toLowerCase()) === -1 && 
     pickedWordPlaceHolderArr.indexOf(letter.toUpperCase()) === -1) { 
-        guessesLeft--;
+        guessesLeft$ --;
         incorrectLetterBank.push(letter);
         guessedLetterBank.textContent = incorrectLetterBank.join(" ");
-        guessesLeft.textContent = guessesLeft;
+        guessesLeft$.textContent = guessesLeft$;
     }
     checkLoss();
 }
@@ -95,10 +95,10 @@ function checkIncorrect(letter) {
 
 // check lose
 function checkLoss() {
-    if (guessesLeft === 0) {
+    if (guessesLeft$ === 0) {
         gameRunning = false;
-        losses ++;
-        losses.textContent = losses;
+        lossesCount ++;
+        lossesCount.textContent = lossesCount;
     }
     checkWin();
 }
