@@ -66,8 +66,8 @@ function letterGuess(letter) {
                 pickedWordPlaceHolderArr[i] = pickedWord[i];
             }
         }
+        checkIncorrect(letter);
         placeholders.textContent = pickedWordPlaceHolderArr.join(" ");
-
     }
     else {
        if(gameRunning === false) {
@@ -84,7 +84,8 @@ function letterGuess(letter) {
 function checkIncorrect(letter) {
     if (pickedWordPlaceHolderArr.indexOf(letter.toLowerCase()) === -1 && 
     pickedWordPlaceHolderArr.indexOf(letter.toUpperCase()) === -1) { 
-        guessesLeft$ --;
+        guessesLeft$--;
+        //console.log("HERE");
         incorrectLetterBank.push(letter);
         guessedLetterBank.textContent = incorrectLetterBank.join(" ");
         guessesLeft.textContent = guessesLeft$;
@@ -106,7 +107,7 @@ function checkLoss() {
 
 // check win
 function checkWin () {
-    if (pickedWord.toLowerCase() === pickedWordPlaceHolderArr.join(" ").toLowerCase())
+    if (pickedWord.toLowerCase() == pickedWordPlaceHolderArr.join("").toLowerCase())
     {
         winsCount ++;
         gameRunning = false;
